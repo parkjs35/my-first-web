@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Academic Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+--bg:#fafafa;
+--card:#ffffff;
+--text:#222;
+--sub:#666;
+--line:#ddd;
+--accent:#2F6FED;
+
+}
+
+.dark{
+
+--bg:#111;
+--card:#1a1a1a;
+--text:#f3f3f3;
+--sub:#aaa;
+--line:#333;
+--accent:#6EA8FF;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:var(--bg);
+color:var(--text);
+font-family:'Noto Sans KR',sans-serif;
+transition:.4s;
+line-height:1.8;
+
+}
+
+header{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px;
+
+}
+
+.hero{
+
+max-width:850px;
+
+}
+
+.hero h1{
+
+font-family:'Playfair Display',serif;
+font-size:64px;
+margin-bottom:15px;
+
+}
+
+.hero h2{
+
+font-weight:400;
+font-size:26px;
+color:var(--sub);
+margin-bottom:35px;
+
+}
+
+.hero p{
+
+font-size:18px;
+max-width:700px;
+
+}
+
+nav{
+
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+padding:18px;
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,.55);
+z-index:999;
+
+}
+
+.dark nav{
+background:rgba(20,20,20,.65);
+}
+
+nav ul{
+
+display:flex;
+gap:35px;
+list-style:none;
+
+}
+
+nav a{
+
+text-decoration:none;
+color:var(--text);
+font-weight:500;
+
+}
+
+section{
+
+max-width:1000px;
+margin:auto;
+padding:90px 25px;
+
+}
+
+.title{
+
+font-size:34px;
+margin-bottom:40px;
+font-family:'Playfair Display';
+
+}
+
+.card{
+
+background:var(--card);
+padding:30px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,.05);
+margin-bottom:25px;
+border:1px solid var(--line);
+
+}
+
+.grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+
+}
+
+.tag{
+
+display:inline-block;
+padding:8px 16px;
+background:rgba(47,111,237,.1);
+border-radius:30px;
+margin:6px;
+color:var(--accent);
+
+}
+
+.timeline{
+
+border-left:2px solid var(--accent);
+padding-left:25px;
+
+}
+
+.item{
+
+margin-bottom:30px;
+position:relative;
+
+}
+
+.item::before{
+
+content:'';
+position:absolute;
+left:-34px;
+top:8px;
+width:12px;
+height:12px;
+background:var(--accent);
+border-radius:50%;
+
+}
+
+footer{
+
+padding:50px;
+text-align:center;
+color:var(--sub);
+
+}
+
+button{
+
+padding:12px 22px;
+border:none;
+border-radius:50px;
+background:var(--accent);
+color:white;
+cursor:pointer;
+font-size:15px;
+margin-top:30px;
+
+}
+
+.fade{
+
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+
+}
+
+.show{
+
+opacity:1;
+transform:none;
+
+}
+
+@media(max-width:800px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+nav ul{
+
+gap:18px;
+font-size:14px;
+
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<nav>
+
+<ul>
+
+<li><a href="#about">About</a></li>
+<li><a href="#research">Research</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#cv">CV</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<header>
+
+<div class="hero fade">
+
+<h1>홍 길 동</h1>
+
+<h2>Prospective Ph.D. Student in Humanities</h2>
+
+<p>
+
+인문학은 인간을 이해하는 가장 오래된 기술이며,
+저는 디지털 시대의 문화와 철학, 역사적 기억을 연구하고 있습니다.
+텍스트와 사회를 연결하는 연구를 통해 새로운 해석의 가능성을 탐구합니다.
+
+</p>
+
+<button id="mode">Dark Mode</button>
+
+</div>
+
+</header>
+
+<section id="about" class="fade">
+
+<div class="title">About</div>
+
+<div class="card">
+
+현재 ○○대학교에서 석사과정을 마치고 박사과정 진학을 준비하고 있습니다.
+
+문화, 철학, 기억, 디지털 인문학, AI와 인문학의 접점을 연구하며
+학제간 연구를 지향합니다.
+
+</div>
+
+</section>
+
+<section id="research" class="fade">
+
+<div class="title">Research Interests</div>
+
+<div class="card">
+
+<span class="tag">Digital Humanities</span>
+
+<span class="tag">Philosophy</span>
+
+<span class="tag">History</span>
+
+<span class="tag">Memory Studies</span>
+
+<span class="tag">AI & Humanities</span>
+
+<span class="tag">Cultural Studies</span>
+
+</div>
+
+</section>
+
+<section id="publications" class="fade">
+
+<div class="title">Publications</div>
+
+<div class="timeline">
+
+<div class="item">
+
+<h3>2026</h3>
+
+<p>
+Article Title<br>
+Journal Name
+</p>
+
+</div>
+
+<div class="item">
+
+<h3>2025</h3>
+
+<p>
+
+Conference Presentation
+
+</p>
+
+</div>
+
+<div class="item">
+
+<h3>2024</h3>
+
+<p>
+
+Master Thesis
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="cv" class="fade">
+
+<div class="title">Academic Journey</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Education</h3>
+
+<br>
+
+○○대학교 석사
+
+<br>
+
+○○대학교 학사
+
+</div>
+
+<div class="card">
+
+<h3>Experience</h3>
+
+<br>
+
+Research Assistant
+
+<br>
+
+Teaching Assistant
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="fade">
+
+<div class="title">Contact</div>
+
+<div class="card">
+
+<p>Email</p>
+
+<h3>your@email.com</h3>
+
+<br>
+
+<p>Google Scholar</p>
+
+<h3>scholar profile</h3>
+
+<br>
+
+<p>ORCID</p>
+
+<h3>0000-0000-0000-0000</h3>
+
+</div>
+
+</section>
+
+<footer>
+
+Designed for Ph.D. Application Portfolio
+
+</footer>
+
+<script>
+
+document.getElementById("mode").onclick=()=>{
+
+document.body.classList.toggle("dark");
+
+}
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{threshold:.15});
+
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
